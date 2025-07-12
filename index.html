@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор собівартості</title>
+    <title>Калькулятор себестоимости</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive;
@@ -89,26 +89,26 @@
 <body>
 
     <div id="calculator">
-        <h2 style="font-size: 28px;">Калькулятор собівартості торта</h2>
+        <h2 style="font-size: 28px;">Калькулятор себестоимости торта</h2>
 
-        <label for="ingredientName">Назва інгредієнта:</label>
-        <input type="text" id="ingredientName" placeholder="Введіть назву інгредієнта">
+        <label for="ingredientName">Название ингредиента:</label>
+        <input type="text" id="ingredientName" placeholder="Введите название ингредиента">
 
-        <label for="ingredientPrice">Ціна за кг (в злотих):</label>
-        <input type="number" id="ingredientPrice" placeholder="Введіть ціну за кг">
+        <label for="ingredientPrice">Цена за кг (в злотых):</label>
+        <input type="number" id="ingredientPrice" placeholder="Введите цену за кг">
 
-        <label for="ingredientAmount">Кількість на порцію (в грамах):</label>
-        <input type="number" id="ingredientAmount" placeholder="Введіть кількість на порцію">
+        <label for="ingredientAmount">Количество на порцию (в граммах):</label>
+        <input type="number" id="ingredientAmount" placeholder="Введите количество на порцию">
 
-        <button id="addIngredientBtn">Додати інгредієнт</button>
+        <button id="addIngredientBtn">Добавить ингредиент</button>
 
         <div id="result">
-            <h3>Собівартість торта:</h3>
+            <h3>Себестоимость торта:</h3>
             <p id="totalCost">0 зл</p>
         </div>
 
         <div id="ingredientsList">
-            <h3>Список інгредієнтів:</h3>
+            <h3>Список ингредиентов:</h3>
             <ul id="ingredientDetails"></ul>
         </div>
     </div>
@@ -122,7 +122,7 @@
             const ingredientAmount = parseFloat(document.getElementById('ingredientAmount').value);
 
             if (isNaN(ingredientPrice) || isNaN(ingredientAmount)) {
-                alert('Будь ласка, введіть коректні значення.');
+                alert('Пожалуйста, введите корректные значения.');
                 return;
             }
 
@@ -142,7 +142,7 @@
         function displayIngredientDetails(name, amount, cost) {
             const ingredientDetailsList = document.getElementById('ingredientDetails');
             const listItem = document.createElement('li');
-            listItem.textContent = `${name} - ${amount} г - ${cost.toFixed(2)} зл`;
+            listItem.textContent = `${name} – ${amount} г – ${cost.toFixed(2)} зл`;
             ingredientDetailsList.appendChild(listItem);
         }
 
@@ -152,7 +152,6 @@
             document.getElementById('ingredientAmount').value = '';
         }
 
-        // Додаємо слухача події після завантаження DOM
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('addIngredientBtn').addEventListener('click', addIngredient);
         });
